@@ -102,6 +102,8 @@ public class TextViewCompat extends AppCompatTextView {
         ClickableSpan[] link = ((Spannable) getText()).getSpans(off, off, ClickableSpan.class);
         if (link.length > 0) {
             link[0].onClick(this);
+        } else {
+            performClick();
         }
     }
 
