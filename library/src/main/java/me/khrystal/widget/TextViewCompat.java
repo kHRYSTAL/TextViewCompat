@@ -20,13 +20,6 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 /**
  * usage: fix TextView move up when setMaxLines and LinkSpan, support long press when select
- * <p> textview need support click link, and select text, setTextIsSelectable and setMovementMethod would conflict, at least some phone</p>
- * solution is LinkMovement feature use handleLinkClick to implement
- * <p> long press to select text in some phone(mi 6), will touch off ACTION_CANCEL, it will caused text select but popup not display</p>
- * solution is when touch off ACTION_CANCEL, judge whether or not select text, if yes, make ACTION_CANCEL change to ACTION_UP give super,
- * it may be broke system logic
- * <p>base on question 2, some phone(Huawei), always has problem, we can find if view has focus can show popup</p>
- * solution is in onWindowVisibilityChanged, request focus
  * author: kHRYSTAL
  * create time: 2020-04-08
  * update time:
